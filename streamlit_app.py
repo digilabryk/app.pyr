@@ -21,7 +21,7 @@ else:
             with st.spinner("Thinking..."):
                 try:
                     completion = client.chat.completions.create(
-                        model="llama-3.1-70b-versatile",
+                        model="llama-3.1-8b-instant",
                         messages=[
                             {"role": "system", "content": "You are a helpful, efficient AI agent."},
                             {"role": "user", "content": prompt}
