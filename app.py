@@ -6,7 +6,7 @@ st.set_page_config(page_title="24/7 Free AI Agent", page_icon="🤖")
 st.title("🤖 24/7 Free AI Agent")
 st.write("Powered by Groq & Streamlit Community Cloud")
 
-# Sidebar mein API key lene ke liye
+# Sidebar mein API key enter karne ka option
 api_key = st.sidebar.text_input("Enter Groq API Key", type="password")
 
 if not api_key:
@@ -20,8 +20,9 @@ else:
         if prompt:
             with st.spinner("Thinking..."):
                 try:
+                    # Sab se stable aur permanent Groq model ID
                     completion = client.chat.completions.create(
-                        model="llama-3.3-70b-versatile",
+                        model="llama3-8b-8192",
                         messages=[
                             {"role": "system", "content": "You are a helpful, efficient AI agent."},
                             {"role": "user", "content": prompt}
@@ -32,5 +33,5 @@ else:
                     st.write(completion.choices[0].message.content)
                 except Exception as e:
                     st.error(f"Error: {e}")
-        else:
-            st.warning("Please enter a prompt first.")
+            else:
+                st.warning("Please enter a prompt first.")
