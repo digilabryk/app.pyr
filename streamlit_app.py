@@ -7,7 +7,7 @@ st.title("🤖 24/7 Free AI Agent")
 st.write("Powered by Groq & Streamlit Community Cloud")
 
 # Sidebar mein API key lene ke liye
-api_key = st.sidebar.text_input("Enter Groq API Key", type="password")
+api_key = st.sidebar.text_input("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", type="password")
 
 if not api_key:
     st.warning("Please enter your Groq API Key in the sidebar to start.")
